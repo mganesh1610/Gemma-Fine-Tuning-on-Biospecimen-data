@@ -1,0 +1,25 @@
+# Local configuration and Colab state
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.unsloth/
+
+# Data and model artifacts must be reviewed before any public commit
+data/
+datasets/
+models/
+outputs/
+exports/
+*.csv
+*.tsv
+*.parquet
+*.xlsx
+*.xls
+*.h5
+*.h5ad
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.pkl
