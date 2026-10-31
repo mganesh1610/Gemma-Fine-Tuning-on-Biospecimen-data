@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks-staged
+        name: Gitleaks staged secret scan
+        entry: gitleaks git --staged --redact=100 --no-banner --log-level error
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+      - id: notebook-output-check
+        name: Reject saved notebook outputs
+        entry: python3 scripts/check_notebook_outputs.py --staged
+        language: system
+        files: \.ipynb$
+        stages: [pre-commit]
